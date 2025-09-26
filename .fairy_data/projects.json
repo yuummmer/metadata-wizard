@@ -1,0 +1,56 @@
+[
+  {
+    "id": "prj_1758894502",
+    "title": "RNA-Seq study on lech menaiasis",
+    "description": "Bunch of FASTQ files to submit",
+    "status": "In Progress",
+    "created_at": "2025-09-26T06:48:22.223334Z",
+    "updated_at": "2025-09-26T06:48:22.223334Z",
+    "data_inventory": [],
+    "permissions": {
+      "contains_human_data": null,
+      "irb_required": null,
+      "notes": ""
+    },
+    "deid": {
+      "strategy": "",
+      "notes": ""
+    },
+    "metadata": {
+      "project": {},
+      "samples": []
+    },
+    "repository": {
+      "choice": null,
+      "notes": ""
+    },
+    "exports": []
+  },
+  {
+    "id": "prj_1758850026",
+    "title": "A Submission to You",
+    "description": "This is a dataset of RNA-seq data",
+    "status": "In Progress",
+    "created_at": "2025-09-25T18:27:06.717643Z",
+    "updated_at": "2025-09-25T18:27:06.717643Z",
+    "data_inventory": [],
+    "permissions": {
+      "contains_human_data": null,
+      "irb_required": null,
+      "notes": ""
+    },
+    "deid": {
+      "strategy": "",
+      "notes": ""
+    },
+    "metadata": {
+      "project": {},
+      "samples": []
+    },
+    "repository": {
+      "choice": null,
+      "notes": ""
+    },
+    "exports": []
+  }
+]
