@@ -1,0 +1,64 @@
+meta:
+  name: tate-art-collections-ingest
+  version: 0.1.0
+  description: Ingestion checks for Art Collections (artworks + artists)
+  target: csv
+
+params:
+  min_year: 1600
+  max_year: 2025
+
+tables:
+  artworks:
+    path: katas/art-collections/fixtures/artworks.csv
+  artists:
+    path: katas/art-collections/fixtures/artists.csv
+
+rules:
+  # 1) STRUCTURAL: required columns
+  - id: artworks-required-core
+    type: required
+    severity: fail
+    config:
+      pattern: "artworks*.csv"
+      columns:
+        - id
+        - artistId
+        - title
+        - acquisitionYear
+        - url
+
+  - id: artists-required-core
+    type: required
+    severity: fail
+    config:
+      pattern: "artists*.csv"
+      columns:
+        - artistId
+        - artist
+
+  # 2) KEYS: unique IDs
+  - id: artworks-id-unique
+    type: unique
+    severity: fail
+    config:
+      pattern: "artworks*.csv"
+      columns: ["id"]
+
+  - id: artists-id-unique
+    type: unique
+    severity: fail
+    config:
+      pattern: "artists*.csv"
+      columns: ["artistId"]
+
+  # # 3) SEMANTIC: acquisition year range
+  # - id: acquisition-year-range
+  #   type: range
+  #   severity: fail
+  #   config:
+  #     pattern: "artworks*.csv"
+  #     column: acquisitionYear
+  #     min: ${min_year}
+  #     max: ${max_year}
+  #     inclusive: true
